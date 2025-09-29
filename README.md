@@ -8,9 +8,11 @@ When creating items, this works best if you put an icon on the item. Find the ic
 
 This CSS hides the menu bars - so to access settings, items etc, you will need to use the URL directly. 
 
-/settings - for the settings page
-/items - for the list of items displayed on the page
-/users - for the list of users
+<ul>
+<li>/settings - for the settings page</li>
+<li>/items - for the list of items displayed on the page</li>
+<li>/users - for the list of users</li>
+</ul>
 
 <b>Deployment</b>
 
