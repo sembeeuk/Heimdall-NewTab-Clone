@@ -1,0 +1,209 @@
+/* ===========================
+   Heimdall → Chrome new-tab style
+   =========================== */
+
+/* === Hide Menu Bar === */
+#config-buttons a {
+  width: 0;
+}
+
+/* === Base page === */
+#app .content {
+  background:#fff !important;        /* plain white background */
+  display:block !important;          /* stop vertical centering */
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+/* === Search bar === */
+.searchform{
+  background:transparent !important; 
+  box-shadow:none !important; 
+  border:none !important;
+  padding:0 !important; 
+  margin:20px auto 20px !important;  /* gap above and below */
+  max-width:600px !important; 
+  width:90% !important;
+  display:flex !important; 
+  flex-direction:column !important; 
+  align-items:center !important;
+}
+/* Small Google logo */
+.searchform::before{
+  content:url("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png");
+  display:block; 
+  margin-bottom:20px;
+}
+#search-container.input-container{
+  background:transparent !important; 
+  box-shadow:none !important; 
+  border:none !important;
+  padding:0 !important; 
+  margin:0 !important; 
+  width:100% !important; 
+  position:relative !important;
+  display:flex !important; 
+  justify-content:center !important;
+}
+/* Always Google: hide provider dropdown */
+#search-container select[name="provider"]{ display:none !important; }
+/* Input field styling */
+#search-container input.homesearch{
+  width:100% !important; 
+  height:44px !important; 
+  padding:0 44px 0 14px !important;   /* leave space for button */
+  border:1px solid #dfe1e5 !important; 
+  border-radius:24px !important; 
+  font-size:16px !important;
+  color:#202124 !important; 
+  background:#fff !important; 
+  outline:none !important; 
+  box-shadow:none !important;
+  transition:box-shadow .2s, border-color .2s !important;
+}
+#search-container input.homesearch:focus{
+  border-color:#4285f4 !important; 
+  box-shadow:0 1px 6px rgba(32,33,36,.28) !important;
+}
+/* Submit button (magnifying glass) */
+#search-container button{
+  position:absolute !important; 
+  right:14px !important; 
+  top:50% !important; 
+  transform:translateY(-50%) !important;
+  border:none !important; 
+  background:transparent !important; 
+  cursor:pointer !important; 
+  font-size:0 !important;
+}
+#search-container button::after{ 
+  content:"\1F50D";                   /* magnifying glass */
+  font-size:18px !important; 
+  color:#5f6368 !important; 
+}
+
+/* === Icon grid === */
+#sortable.folders{
+  display:grid !important;
+  grid-auto-flow:row !important;
+  grid-template-columns:repeat(auto-fill,120px) !important; /* fixed 120px columns */
+  gap:12px !important; 
+  justify-content:center !important;
+  max-width:1308px !important;        /* cap at 10 icons per row */
+  margin:0 auto !important; 
+  padding:0 !important;
+}
+#sortable.folders > .item-container{ width:120px !important; }
+/* Responsive: allow fewer columns on smaller screens */
+@media (max-width:1310px){
+  #sortable.folders{
+    max-width:100% !important;
+    grid-template-columns:repeat(auto-fit, minmax(120px,1fr)) !important;
+  }
+  #sortable.folders > .item-container{ width:auto !important; }
+  #app .content .item{ width:100% !important; }
+}
+
+/* === Tile styling === */
+#app .content .item{
+  width:120px !important; 
+  height:120px !important; 
+  padding:8px !important; 
+  margin:0 !important;
+  background:transparent !important; 
+  border:0 !important; 
+  box-shadow:none !important; 
+  filter:none !important;
+  display:flex !important; 
+  flex-direction:column !important; 
+  align-items:center !important; 
+  justify-content:center !important; 
+  text-align:center !important;
+  position:relative !important; 
+  flex:0 0 120px !important; 
+  transition:all .2s ease-in-out !important;
+}
+/* Kill decorative arcs/halos */
+#app .content .item::before, 
+#app .content .item::after{ 
+  content:none !important; 
+  display:none !important; 
+}
+
+/* Icon circle */
+#app .content .item .app-icon-container{
+  width:64px !important; 
+  height:64px !important; 
+  border-radius:50% !important; 
+  background:#f1f3f4 !important;
+  display:flex !important; 
+  align-items:center !important; 
+  justify-content:center !important; 
+  overflow:hidden !important; 
+  margin:0 auto 6px !important;
+}
+#app .content .item .app-icon-container img.app-icon{
+  max-width:60% !important; 
+  max-height:60% !important; 
+  object-fit:contain !important; 
+  display:block !important;
+}
+
+/* Title */
+#app .content .item .details{
+  width:100% !important; 
+  margin:6px 0 0 !important; 
+  text-align:center !important;
+  display:flex !important; 
+  align-items:center !important; 
+  justify-content:center !important;
+}
+#app .content .item .details .title{
+  display:block !important; 
+  width:100% !important; 
+  margin:0 auto !important; 
+  max-width:100% !important;
+  font-size:.8rem !important; 
+  line-height:1.2 !important; 
+  color:#000 !important; 
+  text-align:center !important;
+  white-space:nowrap !important; 
+  overflow:hidden !important; 
+  text-overflow:ellipsis !important;
+}
+/* Hide unused text under tiles */
+#app .content .details .subtitle, 
+#app .content .details .description, 
+#app .content .details .card-text{ 
+  display:none !important; 
+}
+
+/* Whole-tile clickable overlay */
+#app .content .item > .link{
+  position:absolute !important; 
+  inset:0 !important; 
+  z-index:5 !important; 
+  background:transparent !important;
+  border:0 !important; 
+  text-indent:-9999px !important; 
+  overflow:hidden !important; 
+  outline:none !important;
+}
+#app .content .item > .link svg{ display:none !important; }
+/* Ensure icon + title stay visible above overlay */
+#app .content .item .app-icon-container, 
+#app .content .item .details{
+  position:relative !important; 
+  z-index:10 !important; 
+  pointer-events:none !important;
+}
+
+/* Hover effect */
+#app .content .item:hover{
+  background:#f1f3f4 !important; 
+  box-shadow:0 2px 6px rgba(0,0,0,.2) !important; 
+  transform:translateY(-2px) !important;
+}
+#app .content .item:hover .details .title{ 
+  color:#202124 !important; 
+}
