@@ -22,7 +22,7 @@ Default Search Provider is to set Google.
 Link Opens in "Open in this tab"
 
 Under Advanced, but the contents of the CSS file in the box for Custom CSS.
-Optionally, but the contents of the JS file in to the Custom JaveScript. This allows you to change the page title - but it applies to allow pages. 
+Optionally, but the contents of the JS file in to the Custom JaveScript. This allows you to change the page title - but it applies to all pages. 
 
 <b>Replacing the new tab page</b>
 
