@@ -28,4 +28,6 @@ Optionally, but the contents of the JS file in to the Custom JaveScript. This al
 
 If you are in an Enterprise environment, then you can use Group Policy to use this page to replace the new tab page.
 
+Computer/User Configuration > Administrative Templates > Microsoft Edge > Startup, homepage and new tab page
+
 For home users, use one of the many extensions to override the new tab page. 
