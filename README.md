@@ -36,9 +36,11 @@ The optional JavaScript allows you to change the page title, but note that it ap
 
 In an enterprise environment, you can use Group Policy to replace the browser new tab page in MS Edge with your Heimdall dashboard.
 
-Path:
-Edge: Computer/User Configuration > Administrative Templates > Microsoft Edge > Startup, homepage and new tab page
-Chrome: Computer/User Configuration > Administrative Templates > Google > Google Chrome > Startup, homepage and new tab page
+Microsoft Edge: 
+Computer/User Configuration > Administrative Templates > Microsoft Edge > Startup, homepage and new tab page
+
+Google Chrome: 
+Computer/User Configuration > Administrative Templates > Google > Google Chrome > Startup, homepage and new tab page
 
 Chrome requires the Google Chrome GPO which you can get from Google. 
 
